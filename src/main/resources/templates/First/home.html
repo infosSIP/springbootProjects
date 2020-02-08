@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<!-- thymeleaf is our templating engine -->
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Page home First</h1>
+
+<h2 th:text="${frm}"></h2>
+<h2 th:text="${lieu}"></h2>
+<h2 th:text="${m}"></h2>
+
+<table>
+<tr th:each ="formation : ${formations}">
+               <td th:text="${formation}">...</td>
+</tr>
+</table>
+
+<h2 align="center">Liste des formations de SIP</h2>
+	<table align="center" border="1">
+	<tr th:each="f:${afs}">
+		<td th:text="${f.id}"></td>
+		<td th:text="${f.libelle}"></td>
+		<td th:text="${f.heures}"></td>
+		<td th:text="${f.language}"></td>
+	</tr>
+	</table>
+</body>
+</html>
